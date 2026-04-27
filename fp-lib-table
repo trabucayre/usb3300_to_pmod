@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "pkl_connectors") (type "KiCad") (uri "${KIPRJMOD}/../lib/pkl/pkl_connectors.pretty") (options "") (descr ""))
+)

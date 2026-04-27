@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "pkl_conn") (type "Legacy") (uri "${KIPRJMOD}/../lib/pkl/pkl_conn.lib") (options "") (descr ""))
+)
