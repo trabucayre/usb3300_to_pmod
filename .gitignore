@@ -1,3 +1,5 @@
 *.lck
 *.kicad_prl
 .history
+build
+__pycache__
