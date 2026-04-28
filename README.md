@@ -80,6 +80,43 @@ row, and pins `7` to `12` are on the second row.
 The `examples` directory contains modified LiteX targets using the USB3300 as a
 USB CDC ACM UART.
 
+### Prerequisites
+
+Using CDC ACM requires [amaranth](https://github.com/amaranth-lang/amaranth),
+[Luna](https://github.com/greatscottgadgets/luna) and
+[LiteX](https://github.com/enjoy-digital/litex).
+
+**amaranth**
+
+```bash
+git clone https://github.com/amaranth-lang/amaranth.git
+cd amaranth
+# v0.5.8 is required by Luna
+git checkout v0.5.8
+pip3 install --user --break-system-packages -e .
+cd ..
+```
+
+**Luna**
+
+```bash
+git clone https://github.com/greatscottgadgets/luna.git
+cd luna
+git checkout 0.2.3
+# A commit has introduced a regression and must be reverted
+# (https://github.com/greatscottgadgets/luna/issues/280)
+git revert --no-edit cf6abaae922bd3f04ca6118f0a7d26b768859d28
+pip3 install --user --break-system-packages -e .
+cd ..
+```
+
+**LiteX**
+
+This step is well documented in the
+[official page](https://github.com/enjoy-digital/litex/#quick-start-guide)
+
+### Build
+
 To build a gateware image, use:
 
 ```bash
@@ -90,13 +127,15 @@ cd examples
 Where `board_name.py` may be:
 
 - `digilent_arty_s7.py`
+
+  <img width=400 alt="digilent_arty_s7" src=picts/digilent_arty_s7.jpeg />
 - `sipeed_tang_mega_138k.py`
+
+  <img width=400 alt="sipeed_tang_mega_138k" src=picts/sipeed_tang_mega_138k.jpeg />
 - `arrow_axe5000.py`
+  Requires the [Ziggy Bridge MKR](https://github.com/steieio/ziggybridge-mkr)
 
-<img width=400 alt="digilent_arty_s7" src=picts/digilent_arty_s7.jpeg />
-<img width=400 alt="sipeed_tang_mega_138k" src=picts/sipeed_tang_mega_138k.jpeg />
-
-<img width=400 alt="arrow_axe5000" src=picts/arrow_axe5000.jpg />
+  <img width=400 alt="arrow_axe5000" src=picts/arrow_axe5000.jpg />
 
 ## Contact
 
